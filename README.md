@@ -1,4 +1,4 @@
-"# LZSSCompressor" 
+# LZSSCompressor
 
 Author: Kegan Johnson
 
