@@ -1,0 +1,264 @@
+/*
+    #b1bfc9 // darker blue
+*/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    transition: all 0.2s ease-out;
+}
+
+body, html {
+    height: 100%;
+    font-size: 16px;
+    background-color: #ebf1f5;
+    color: #2E2E2E;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 70rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.2rem;
+    gap: 3rem;
+}
+
+main.wrapper {
+    padding: 3rem 1.2rem 4rem 1.2rem;
+}
+
+header, footer {
+    max-width: 100%;
+}
+
+header {
+    background-color: white;
+    box-shadow: 0 0 0.2rem #2E2E2E;
+}
+
+footer {
+    background-color: #2E2E2E;
+    color: gray;
+}
+
+footer .wrapper {
+    gap: 0.5rem;
+}
+
+footer .wrapper p {
+    align-self: center;
+}
+
+header .wrapper {
+    gap: 0;
+}
+
+hr {
+    margin: auto;
+    width: 85%;
+    height: 0.05rem;
+    border: none;
+    background-color: gray;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    border-radius: 1rem;
+    border: 0.05rem solid lightgray;
+    padding: 2.5rem;
+    gap: .5rem;
+}
+
+.card h2 {
+    margin-bottom: 1.5rem;
+}
+
+h1, h3, h2, p {
+    align-self: flex-start;
+}
+
+p {
+    line-height: 1.4rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.85rem;
+    color: black;
+    font-weight: 500;
+}
+
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+em {
+    color: gray;
+}
+
+a {
+    color: #ebf1f5;
+}
+
+a:hover {
+    color: #3a69b5;
+}
+
+form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: flex-start;
+}
+
+input[type="file"] {
+    border: 0.1rem dashed #2E2E2E;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+textarea, input[type=submit] {
+    border-radius: 0.5rem;
+    border: 0.05rem solid #2E2E2E;
+}
+
+textarea {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    resize: none;
+}
+
+.output {
+    background-color: #dadfe8;
+}
+
+.dropbox { }
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    flex: 1 0 0;
+    width: 100%;
+    gap: 0.25rem;
+}
+
+input[type="submit"] {
+    width: 10rem;
+    padding: 0.75rem;
+    background-color: #2E2E2E;
+    border: 0.1rem solid #2E2E2E;
+    color: white;
+    font-size: 1rem;
+}
+
+.statsLabel {
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex: 1 0 0;
+    color: #3a69b5;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.downloadBtn {
+    width: 10rem;
+    background: none;
+    color: #2E2E2E;
+    border: 0.1rem solid #2E2E2E;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-left: auto;
+}
+
+input[type="submit"]:hover, .downloadBtn:hover {
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    filter: brightness(175%);
+}
+
+.downloadBtn:hover {
+    background-color: white;
+    filter: brightness(85%);
+}
+
+
+@media only screen and (max-width: 700px) {
+
+    section {
+    }
+
+    .formGroup {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .buttonsGroup {
+        gap: 0.75rem;
+    }
+
+    h1, h2, h3 {
+    }
+
+    .card {
+        padding: 1.75rem 1.5rem;
+    }
+
+    input[type="submit"], .downloadBtn {
+        width: 100%;
+        padding: 0.85rem;
+        order: 1;
+    }
+
+    .downloadBtn {
+        order: 2;
+    }
+
+    .statsLabel {
+        order: 3;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="compression, compressed, compressor, zip, zipped, file, files, LZSS, LZ77, Lempel-Ziv, Lempel-Ziv-Storer-Szymanski" />
+    <title>LZSS Compressor</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://kit.fontawesome.com/4d51c03a90.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!---
+    <header>
+        <div class="wrapper">
+
+        </div>
+    </header>
+    --->
+
+    <main class="wrapper">
+        <section id="titleSection">
+            <h1>Lempel-Ziv Text Compressor</h1>
+            <h3>by Kegan Johnson</h3>
+        </section>
+
+        <section id="aboutSection">
+            <p>The LZSS compression algorithm losslessly reduces file sizes by decreasing redundancy. It scans for repeated data, 
+                then attempts to replace the repeats with a shorter token that refers back to the first instance of that data.
+                These tokens are called length-distance pairs, as they indicate the length of the repeated data, and the distance
+                one must go back to retrieve the original instance of it. Here, you can try out my implementation of LZSS for text.
+            </p>
+        </section>
+
+        <section id="encoderSection">
+            <h2>Encoder</h2>
+            <div class="card">
+
+                <form>
+                    <label for="encoderDropbox">Upload a text file:
+                        <input type="file" class="dropbox" id="encoderDropbox" name="encoderDropbox" accept=".txt"></input>
+                    </label>
+
+                    <div class="formGroup">
+
+                        <label for="encoderInput">Text to be encoded:
+                            <textarea rows=6 cols=1 id="encoderInput" name="encoderInput" 
+                            placeholder="Upload your text file or enter your text manually, then click encode"></textarea>
+                        </label>
+
+                        <label for="encoderOutput">Encoded result:
+                            <textarea rows=6 cols=1 id="encoderOutput" class="output" name="encoderOutput" readonly 
+                            placeholder="Upload your text file or enter{24,11}manually, then click encode"></textarea>  
+                        </label> 
+                    </div>
+
+                    <div class="formGroup buttonsGroup">
+                        <input type="submit" id="encoderSubmit" name="encoderSubmit" value="Encode">
+                        <output id="encoderStats" class="statsLabel" for="encoderInput encoderOutput">Reduced length by: --%</output>
+                        <button id="encoderDownloadBtn" class="downloadBtn">Download</button>
+                    </div>
+                </form>
+                
+            </div>
+        </section>
+
+        <section id="decoderSection">
+            <h2>Decoder</h2>
+            <div class="card">
+                <form>
+                    <label for="decoderDropbox">Upload a text file:
+                        <input type="file" class="dropbox" id="decoderDropbox" name="decoderDropbox" accept=".txt"></input>
+                    </label>
+
+                    <div class="formGroup">
+                        <label for="decoderInput">Text to be decoded:
+                            <textarea rows=6 cols=1 id="decoderInput" name="decoderInput" 
+                            placeholder="Upload your text file or enter your text manually, then click decode"></textarea>
+                        </label>
+
+                        <label for="decoderOutput">Decoded result:
+                            <textarea rows=6 cols=1 id="decoderOutput" class="output" name="decoderOutput" readonly 
+                            placeholder="Upload your text file or enter{24,11}manually, then click decode"></textarea> 
+                        </label>  
+                    </div>
+
+                    <div class="formGroup buttonsGroup">
+                        <input type="submit" id="decoderSubmit" name="decoderSubmit" value="Decode">
+                        <output id="decoderStats" class="statsLabel" for="decoderInput decoderOutput">Increased length by: --%</output>
+                        <button id="decoderDownloadBtn" class="downloadBtn">Download</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+        <div class="wrapper">
+            <p>Made by Kegan Johnson. See my projects on <a href="https://github.com/keganj08">Github</a></p>
+            <p>Read more about <a href="https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Storer%E2%80%93Szymanski">LZSS</a></p>
+        </div>
+    </footer>
+
+    <script type="module" src="/js/controllers.js"></script>
+    <script type="module" src="/js/models.js"></script>
+    <script type="module" src="/js/view.js"></script>
+</body>
+</html>
