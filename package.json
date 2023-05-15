@@ -1,0 +1,30 @@
+{
+  "name": "zlsscompressor",
+  "version": "1.0.0",
+  "description": "a text compression tool using the lzss compression algorithm",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keganj08/LZSSCompressor.git"
+  },
+  "keywords": [
+    "compression",
+    "zlss",
+    "zip",
+    "file",
+    "files"
+  ],
+  "author": "Kegan Johnson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.18.2"
+  },
+  "bugs": {
+    "url": "https://github.com/keganj08/LZSSCompressor/issues"
+  },
+  "homepage": "https://github.com/keganj08/LZSSCompressor#readme"
+}
