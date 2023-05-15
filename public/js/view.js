@@ -8,7 +8,19 @@ export function updateTextEl(elId, newVal) {
 }
 
 export function updateStatsEl(elId, sizeDiff) {
-    if(!sizeDiff) { sizeDiff = 0; }
-    document.getElementById(elId).innerHTML = `Reduced length by: ${sizeDiff * 100.0}%`;
-    //document.getElementById(elId).style.visibility = "visible";
+    let msg;
+    if(!sizeDiff) { 
+        msg = "";
+    } else if(sizeDiff < 0.0) {
+        msg = `Reduced text by: ${Math.abs(sizeDiff)}%`;
+    } else if(sizeDiff > 0.0) {
+        msg = `Expanded text by: ${sizeDiff}%`;
+    } else {
+        msg = `Text size unchanged`;
+    }
+    document.getElementById(elId).innerHTML = msg;
+}
+
+export function displayErrorEl(elId, msg) {
+
 }
