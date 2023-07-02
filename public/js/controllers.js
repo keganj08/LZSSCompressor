@@ -62,5 +62,13 @@ document.getElementById("decoderDownloadBtn").addEventListener("click", (e) => {
     decoder.prepareDownload();
 });
 
+document.getElementById("infoBtn").addEventListener("click", (e) => {
+    if(document.getElementById("aboutSection").classList.contains("collapsed")) {
+        document.getElementById("aboutSection").classList.remove("collapsed");
+    } else {
+        document.getElementById("aboutSection").classList.add("collapsed");
+    }
+});
+
 export default {}
 

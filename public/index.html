@@ -19,21 +19,18 @@
 
     <main class="wrapper">
         <section id="titleSection">
-            <h1>Lempel-Ziv Text Compressor</h1>
-            <h3>by Kegan Johnson</h3>
-        </section>
+            <span>
+                <h1>Lempel-Ziv Text Compressor</h1>
+                <a id="infoLink" href="#aboutSection"><i class="fa-regular fa-circle-question"></i></a>
+            </span>
 
-        <section id="aboutSection">
-            <p>The LZSS compression algorithm losslessly reduces file sizes by decreasing redundancy. It scans for repeated data, 
-                then attempts to replace the repeats with a shorter token that refers back to the first instance of that data.
-                These tokens are called length-distance pairs, as they indicate the length of the repeated data, and the distance
-                one must go back to retrieve the original instance of it. Here, you can try out my implementation of LZSS for text.
-            </p>
+
+            <h3 id="subTitle">by Kegan Johnson</h3>
         </section>
 
         <section id="encoderSection">
-            <h2>Encoder</h2>
             <div class="card">
+                <h2>Encoder</h2>
 
                 <form>
                     <label for="encoderDropbox">Upload a text file:
@@ -64,8 +61,10 @@
         </section>
 
         <section id="decoderSection">
-            <h2>Decoder</h2>
+
             <div class="card">
+                <h2>Decoder</h2>
+                
                 <form>
                     <label for="decoderDropbox">Upload a text file:
                         <input type="file" class="dropbox" id="decoderDropbox" name="decoderDropbox" accept=".txt"></input>
@@ -92,13 +91,27 @@
             </div>
         </section>
 
+        <section id="aboutSection" class="collapsed">
+            <h3>About this tool</h3>
+            <p>The 
+                <a href="https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Storer%E2%80%93Szymanski">LZSS compression algorithm</a> 
+                losslessly reduces file sizes by decreasing redundancy. It scans for repeated data, 
+                then attempts to replace the repeats with a shorter token that refers back to the first instance of that data.
+                These tokens -- represented here in the form <em>{d,l}</em> -- are called length-distance pairs, as they indicate 
+                the length of the repeated data, and the distance one must go back to retrieve the original instance of it.
+            </p>
+            <p>Here you can use my implemenation of LZSS to reduce your text file sizes. Simply upload a text file or enter some
+                text yourself, then click <em>Encode</em> or <em>Decode</em>.
+            </p>
+        </section>
+
+
     </main>
 
     <footer>
         <hr>
         <div class="wrapper">
             <p>Made by Kegan Johnson. See my projects on <a href="https://github.com/keganj08">Github</a></p>
-            <p>Read more about <a href="https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Storer%E2%80%93Szymanski">LZSS</a></p>
         </div>
     </footer>
 
