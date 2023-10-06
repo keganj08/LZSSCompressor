@@ -57,9 +57,14 @@ class Encoder extends StringWorker {
 
         let curr = "";
         let buffer = "";
+        const bufferCap = 10000;
 
         let i = 0;
+
+        const start = Date.now();
+
         while(i < this.input.length) { // Iterate over entire input
+            console.log(`${i+1} / ${this.input.length}`);
             curr = this.input[i];
             
             if(buffer.indexOf(curr) > -1) { // Current string is in buffer
@@ -97,9 +102,15 @@ class Encoder extends StringWorker {
                 this.output += curr;
                 buffer += curr;
             }
+            //if(buffer.length > bufferCap) buffer = buffer.substring(1);
             curr = "";
             i++;
         }
+        
+        const end = Date.now();
+
+        console.log(`Finished in ${end - start} ms, or ${(end - start)/1000} s`);
+
         this.updateSizeDiff();
         updateTextEl(this.outputTextEl, this.output);
         updateStatsEl(this.statsEl, this.sizeDiff);
